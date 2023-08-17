@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+	--grid_dim: 80vh;
+	--cells: 50;
+
+	--cell_dimention: calc(var(--grid_dim) / var(--cells));
+}
+
+html {
+	margin: 0;
+	padding: 0;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+	display: flex;
+
+    height: 100vh;
+    width: 100vw;
+
+	align-items: center;
+	justify-content: center;	
+
+	margin: 0;
+}
+
+#field {
+	display: grid;
+
+	width: 80vh;
+	height: 80vh;
+
+	grid-template-rows: repeat(var(--cells), var(--cell_dimention));
+	grid-template-columns: repeat(var(--cells), var(--cell_dimention));
+
+	background: black;
+}
+
+.cell {
+	width: 100%;
+	height: 100%;
+
+	background-color: white;
+
+	visibility: hidden;
+}
+
+#gameover {
+	display: grid;
+
+	font-family: 'Roboto Mono', monospace;
+
+	width: 80vh;
+	height:80vh;
+
+	grid-template-rows: 2fr 1fr 0.5fr;
+
+	background-color: black;
+	color: white;
+}
+
+#gameovertext {
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+
+	font-weight: bold;
+	font-size: 6vh;
+}
+
+#appleseatentext {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        font-weight: bold;
+        font-size: 2vh;
+}
+
+#playagain {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        font-size: 2vh;
+}
